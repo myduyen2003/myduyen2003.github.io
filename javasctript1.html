@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+    <html>
+           <head>
+                      <style>
+		#noidung{background: rgb(182, 182, 223); height:250px; width:100%;color:rgb(58, 207, 58); font-size:25px;}
+		button{
+            min-width: 250px;
+            min-height: 50px;
+            margin-right: 50px;
+            padding: 10px;
+             background:rgb(255, 0, 149);}
+            
+       h1{
+        text-align: center;
+        color: aqua;
+       }
+
+	</style>
+     
+           </head>
+           <body>
+            <h1>Bài tập JavaScript</h1>
+          <form id="myForm" action="">
+             <p>Vui lòng nhập tên: <input id="textbox1" name="textname" type="text" /></p>
+             <p>n =  <input id="textbox2" name="n" type="text" /></p>
+           </form>
+            <p id="noidung"></p>
+            <button type="button" onclick="hienthi()">Hien thi </button>            
+           <button type="button" onclick="tinhtong()">Tinh tong</button>            
+          <button type="button" onclick="tinhtongchan()">Tinh tong chan</button>  
+            <script>
+              function hienthi() {
+	// Giới thiệu tên
+                document.getElementById("noidung").innerHTML = "Xin chao. Toi là " + document.forms["myForm"].textname.value;
+              }
+             function tinhtong() {
+                  //Tính tổng từ 1 -> n
+         var n = document.getElementById("textbox2").value;         
+            var tong=0
+                  for(i=1;i<=n;i++){
+                    tong=tong +i;
+                }
+	document.getElementById("noidung").innerHTML ="Tổng từ 1 đến " +  document.forms["myForm"].n.value + " là: "+tong;
+              }
+            function tinhtongchan() {
+                  //Tính tổng các số chẳn từ 1 -> n
+         var n = document.getElementById("textbox2").value;
+            var tongchan=0
+                  for(i=1;i<=n;i++){
+          if(i%2==0){
+            tongchan=tongchan+i;
+          }
+        }
+	document.getElementById("noidung").innerHTML ="Tổng các số chẵn từ 1 đến " +  document.forms["myForm"].n.value + " là: "+tongchan;
+              }
+            </script>    
+         </body>
+    </html>
+      
